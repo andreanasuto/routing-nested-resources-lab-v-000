@@ -10,6 +10,9 @@ class SongsController < ApplicationController
 
   def show
       @song = Song.find(params[:id])
+      if @song.nil?
+        redirect_to 'index'
+      end
   end
 
   def new
