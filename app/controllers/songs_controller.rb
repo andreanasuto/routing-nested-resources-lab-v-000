@@ -9,11 +9,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    if params[:artist_id]
-      
-    else
       @song = Song.find(params[:id])
-    end
   end
 
   def new
@@ -59,4 +55,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
